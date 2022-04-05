@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" type="image/png" href="fortniteF.png">
+    <style>
+        @font-face {
+            font-family: czcionka;
+            src: url(fortniteFont.otf);
+            }   
+        body{
+            background-color: black;
+            margin:0 auto;
+            font-family: czcionka;
+            height: 100%;
+        }
+        main, footer{
+            justify-content: center;
+            text-align: center;
+            background-color: black;
+        }
+        header{
+            border:3px solid white;
+            font-size:xx-large;
+            position:fixed; 
+            left: 50%;
+            transform: translateX(-50%);
+            width:99%;
+            margin-top: 10px;
+            top:0;
+            background-image: url("fortnitetlo.jpg");
+            z-index: 100;
+            display: inline;
+            justify-content: space-evenly;
+        }
+        header ul {
+            list-style-type: none;
+            padding: 0;
+            overflow:hidden;
+            width:auto;
+            border-top:1px groove navy;
+            border-bottom:1px groove navy;
+            justify-content: center;
+            
+        }
+        li {
+            float:left;
+            width: 25%;
+        }
+        header li a {
+            text-decoration: none;
+            text-align: center;
+            line-height: 120px;
+            display:block;
+            height:120px;
+            color: white;
+        }
+        header li a:hover {
+            background-color: white;
+            color:navy;
+            opacity: 0.5;
+        }
+        #part1{
+            position: relative;
+            margin:0 auto;
+            top:160px;
+            width:100%;
+            height: 900px;
+            margin-bottom:140px;
+        }
+        #obraz{
+            float: left;
+        }
+/*slider */
+        #slides {
+    position: relative;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+li img{
+    width:100%;
+    height:100%;
+}
+#part2{
+    box-sizing: border-box;
+    top:10px;
+    width: 100%;
+    color: white;
+    height: 100%;
+    font-size: x-large;
+    padding:40px;
+    margin-bottom:50px;
+    text-align: center;
+
+}
+#part2 h1{
+    background-color: purple;
+}
+
+h1{
+    padding: 10px;
+}
+/*
+
+
+
+
+*/
+
+footer {
+    clear: both;
+    position: relative;
+    background: -webkit-canvas(squares);
+    width:100%;
+    height:200px;
+    background-color: purple;
+    color: white;
+    align-items: flex-end;
+}
+footer h1{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    text-align:center;
+    margin-bottom:-2px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+<body>
+    <header>
+        <a href="index.html"><img width="350px" height="190px" id="obraz" src="logoFT.png"></a>
+        <ul>
+            <li><a href="index.html">Wstęp</a></li>
+            <li><a href="druga.html">Postacie</a></li>
+            <li><a href="bronie.html">Bronie</a></li>
+            <li><a href="formularz.html">Rejestracja</a></li>  
+          </ul>
+    </header>
+    <div id="part1">
+    <ul id="slides">
+        <li class="slide showing"><img src="slider1.jpg"></li>
+        <li class="slide"><img src="slider2.jpg"></li>
+        <li class="slide"><img src="slider3.jpg"></li>
+        <li class="slide"><img src="slider4.jpg"></li>
+    </ul>
+    <script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,4000);
+    
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+    </script>
+    </div>
+    <div id="part2">
+            <h1> TRYBY GRY W FORTNITE</h1>
+           
+            W Fortnite dostępne są cztery główne tryby gry, dzięki którym każdy gracz znajdzie coś dla siebie. Są to: Battle Royale, Królewska Impreza, tryb kreatywny i Ratowanie Świata. 
+            
+            <h1>BATTLE ROYALE</h1>
+            
+            
+            Dostępny na konsolach, komputerach PC i urządzeniach mobilnych tryb Fortnite Battle Royale można pobrać (i grać w niego) za darmo! Wyskoczcie z busa bojowego na znajdującą się poniżej wyspę i walczcie do ostatniego ocalałego. Albo połączcie siły ze znajomymi lub innymi graczami, by przetrwać inne drużyny. Korzystajcie z potęgi drewna, cegieł i metalu, by tworzyć budowle, które pomogą wam w grze.
+            
+            W Fortnite Battle Royale zawsze można spodziewać się ciekawych nowości, w tym nowych przedmiotów, broni, pojazdów, dodatkowych trybów, specjalnych wydarzeń i „sezonów”. Każdy nowy sezon wprowadza na wyspę nowy motyw – w przeszłości było to na przykład przejęcie przez tajnych agentów czy ogromna powódź.
+            
+            Fortnite Battle Royale
+            
+            <h1>TRYB KREATYWNY</h1>
+            
+            
+            Również za darmo w Battle Royale dostępny jest tryb kreatywny w Fortnite, dzięki któremu będziecie zarządzać własną wyspą, by tworzyć własne gry i zasady… oraz zapraszać znajomych! W trybie kreatywnym otrzymujecie do dyspozycji narzędzia umożliwiające projektowanie zarówno prostych, jak i bardziej złożonych gier – decyzja należy do was. W przerwach między tworzeniem projektów wypróbujcie gry autorstwa waszych znajomych i innych fanów Fortnite. 
+            
+            Tworzenie gier i granie w nie to nie wszystko – tryb kreatywny jest również świetnym miejscem do komponowania własnych krajobrazów. Dopasujcie wygląd wyspy do swoich wymagań i bawcie się na niej ze znajomymi!
+            
+            Fortnite Creative
+            
+            <h1>RATOWANIE ŚWIATA</h1>
+            
+            
+            W Ratowaniu Świata w Fortnite będziecie przemierzać ogromny świat pełen obiektów do zniszczenia, odpierając ataki hord potworów wspólnie z innymi graczami. Podczas walki z tymi monstrami (nazywanymi pustakami) będziecie rosnąć w siłę, znajdując łupy, tworząc bronie i rozbudowując kolekcję bohaterów. Budujcie bazę i ufortyfikujcie ją przy użyciu pułapek, by powstrzymać natarcie pustaków!
+             
+            Grajcie w Ratowanie Świata ze znajomymi lub innymi fanami Fortnite. Dostęp do Ratowania Świata możecie uzyskać, kupując pakiet kampanii Ratowanie Świata, który znajdziecie na naszej stronie internetowej, w Fortnite lub w sklepie na konsoli. Ratowanie Świata jest dostępne na konsolach PlayStation i Xbox oraz komputerach PC.
+            
+            Fortnite Save The World
+            
+            <h1> ROZGRYWKA MIĘDZYPLATFORMOWA Z MILIONAMI GRACZY ZE SPOŁECZNOŚCI FORTNITE</h1>
+           
+            W Fortnite grają miliony graczy na całym świecie, dlatego zawsze znajdzie się ktoś do wspólnej rozgrywki, niezależnie od tego, czy chcecie przeżyć ich w Battle Royale, wypróbować z nimi gry w trybie kreatywnym, czy też załatwiać wspólnie z nimi pustaki w Ratowaniu Świata.
+            
+            W Fortnite dostępna jest rozgrywka międzyplatformowa umożliwiająca wspólną grę graczom używającym różnych platform!
+            
+            
+            <h1>NA JAKICH PLATFORMACH MOŻNA GRAĆ W FORTNITE?</h1>
+            Obecnie Fortnite Battle Royale i dostępne w nim Królewska Impreza oraz tryb kreatywny można pobrać na PlayStation, Xbox, Nintendo Switch, PC oraz przez aplikację Epic Games na Androida dostępną na stronie Fortnite.com/Android lub w sklepie Samsung Galaxy Store. Tryb Ratowanie Świata jest obecnie dostępny na PlayStation, Xbox i PC. 
+             
+            Fortnite na urządzenia z systemem iOS, komputery Mac i na Google Play pozostaje w wersji 13.40, a nowi gracze nie mogą zainstalować go na urządzeniach z systemem iOS. Kampania Ratowanie Świata nie jest już dostępna na Macach. Jeśli chcecie grać w Fortnite z najnowszymi aktualizacjami, możecie pobrać grę na platformy wymienione powyżej.
+            
+            <h1>KIM SĄ OSOBY GRAJĄCE W FORTNITE?</h1>
+            
+            Grający w Fortnite tworzą ogromną, ogólnoświatową społeczność ludzi pochodzących z najróżniejszych regionów, grup wiekowych i społecznych. Społeczność Fortnite jest bardzo zróżnicowana!
+            
+            Jeśli chcielibyście zagrać w Fortnite ze znajomym – sąsiadem lub kimś z drugiej strony globu – wspólna rozgrywka jest prosta. Sprawdźcie nasze wskazówki na temat tego, jak grać w Fortnite ze znajomymi.
+            
+            <h1>  CO O FORTNITE POWINNI WIEDZIEĆ RODZICE?</h1>
+          
+            Dostępny jest szereg funkcji kontroli rodzicielskiej, które pomogą nadzorować zabawę członka rodziny w Fortnite, włącznie z opcjami dotyczącymi komunikacji, prywatności i monitorowania czasu gry. Na platformie do gry członka rodziny i/lub na stronie epicgames.com możecie również skonfigurować kontrolę rodzicielską w zakresie ograniczeń zakupów w grze. Więcej dowiecie się z naszego poradnika kontroli rodzicielskiej. O tym, czy Fortnite jest grą odpowiednią dla waszej rodziny, zdecydujecie, odwiedzając stronę Fortnite w Epic Games Store i zapoznając się z klasyfikacją wiekową.
+            
+            Naszym celem jest dbanie o to, by ekosystem Epic Games był miejscem bezpiecznym i sprzyjającym dobrej zabawie, dlatego tworzymy i egzekwujemy Zasady społeczności, a w przypadku udostępniania treści – Wskazówki dotyczące twórczości.
+            
+            Niezależnie od tego, czy zdecydujecie się skonfigurować kontrolę rodzicielską, Fortnite to świetna gra do wspólnej rozgrywki rodziców i reszty rodziny. Dzięki obsłudze wielu urządzeń, zróżnicowanym trybom gry i możliwości łączenia się z osobami znajdującymi się daleko od siebie, w Fortnite mogą się dobrze bawić nawet mało doświadczeni gracze!
+            
+            Fortnite Meowscles And Kit
+            
+            
+            <h1>WSKAKUJCIE DO GRY BEZ TRUDU</h1>
+            Rozpoczęcie gry w Fortnite to nic trudnego, ale jeśli szukacie dodatkowych informacji, wszystko, co potrzebne, znajdziecie na stronie Fortnite.com. Na przykład nasze FAQ Fortnite zawiera sporo informacji na temat funkcji, różnic między platformami, zakupów w grze i innych. Centrum pomocy Fortnite nie tylko pozwala skontaktować się z działem pomocy, ale też stanowi kolejne przydatne źródło informacji.
+             
+            Jeśli szukacie informacji na temat zabezpieczeń, z naszej strony poświęconej bezpieczeństwu dowiecie się, jak zapewnić bezpieczną rozrywkę oraz chronić wasze konta. Sporo z tamtejszych informacji może wydawać się oczywistych, ale i tak nie zaszkodzi się z nimi zapoznać! 
+             
+            To zaledwie kilka zasobów, które udostępniamy wam, byście jak najlepiej bawili się w Fortnite. Nie możemy się doczekać, aż dołączycie do społeczności Fortnite!
+            
+   </div>
+   <footer>
+       <canvas id="canv1" width="150" height="300" hidden></canvas>
+       <h1> Wykonał Mikołaj Skóra </h1>
+    <script>
+        var cont= document.getElementById("canv1")
+        var zaw= cont.getContext("2d")
+        zaw.lineWidth="8"
+        zaw.moveTo(50,20)
+        zaw.lineTo(100,20)
+        zaw.lineTo(100,50)
+        zaw.lineTo(75,50)
+        zaw.lineTo(75,75)
+        zaw.lineTo(90,75)
+        zaw.lineTo(90,100)
+        zaw.lineTo(75,100)
+        zaw.lineTo(75,135)
+        zaw.lineTo(50,135)
+        zaw.lineTo(50,16)
+        zaw.stroke()
+        zaw.fillStyle="white"
+        zaw.fill()
+        $('footer').css({'background-image':"url(" + cont.toDataURL("image/png")+ ")" });
+
+    </script>
+   </footer>
+</body>
+</html>
