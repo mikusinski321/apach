@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" type="image/png" href="fortniteF.png">
+      <style>
+        @font-face {
+            font-family: czcionka;
+            src: url(fortniteFont.otf);
+            }   
+        body{
+            background-color: black;
+            margin:0 auto;
+            font-family: czcionka;
+        }
+        main, footer{
+            justify-content: center;
+            text-align: center;
+            background-color: purple;
+        }
+        header{
+            border:3px solid white;
+            font-size:xx-large;
+            position:fixed; 
+            left: 50%;
+            transform: translateX(-50%);
+            width:99%;
+            margin-top: 10px;
+            top:0;
+            background-image: url("fortnitetlo.jpg");
+            z-index: 100;
+            display: inline;
+            justify-content: space-evenly;
+        }
+        header ul {
+            list-style-type: none;
+            padding: 0;
+            overflow:hidden;
+            width:auto;
+            border-top:1px groove navy;
+            border-bottom:1px groove navy;
+            justify-content: center;
+            
+        }
+        li {
+            float:left;
+            width: 25%;
+        }
+        header li a {
+            text-decoration: none;
+            text-align: center;
+            line-height: 120px;
+            display:block;
+            height:120px;
+            color: white;
+        }
+        header li a:hover {
+            background-color: white;
+            color:navy;
+            opacity: 0.5;
+        }
+        #part1{
+            position: relative;;
+            margin:0 auto;
+            top:160px;
+            width:100%;
+            height: 800px;
+            padding-bottom:8%;
+        }
+        #obraz{
+            float: left;
+        }
+li img{
+    width:100%;
+    height:100%;
+}
+main{
+    box-sizing: border-box;
+    position: relative;
+    top:220px;
+    width: 100%;
+    color: white;
+    height: 600px;
+    font-size: x-large;
+    padding:40px;
+    text-align: center;
+
+}
+th, td{
+    padding:5px;
+    box-sizing: border-box;
+    width:200px;
+    height:100px
+}
+table{
+    width:auto
+}
+#postac{
+    width:300px;
+    height:450px;
+    background-color:pink;
+    border:3px solid black;
+    position: fixed;
+    right:0;
+    top:300px;
+    z-index:300;
+    text-align: center;
+}
+#postac img{
+    width: 100px; height:100px; border:2px solid black
+}
+td:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("bron").src=localStorage.getItem("bron")
+            if(!localStorage.getItem("bron")){
+                localStorage.setItem("bron","assault.png" )
+            }
+                console.log(localStorage.getItem("skin"));
+                console.log(localStorage.getItem("taniec"));
+                document.getElementById("skin").src=localStorage.getItem("skin")+".webp"
+                document.getElementById("taniec").src=localStorage.getItem("skin")+".png"
+                var cells = document.querySelectorAll("td");
+                    for (var i = 0; i < cells.length; i++) {
+                        cells[i].addEventListener('click',function(){
+                            var url = this.getElementsByTagName("img")[0].src 
+                            localStorage.setItem("bron",url )
+                            document.getElementById("bron").src=url
+                        })
+                    }
+});
+    </script>
+  </head>
+<body>
+    <header>
+        <a href="index.html"><img width="350px" height="190px" id="obraz" src="logoFT.png"></a>
+        <ul>
+            <li><a href="index.html">Wstęp</a></li>
+            <li><a href="druga.html">Postacie</a></li>
+            <li><a href="bronie.html">Bronie</a></li>
+            <li><a href="formularz.html">Rejestracja</a></li>  
+          </ul>
+    </header>
+    <div id="postac">
+        <h1> Twoja postać</h1>
+        <img id="skin"><br><img id="taniec"><br><img id="bron">
+    </div>
+    <main>
+       <table>
+        <tr>
+                <th>Type</th>
+                <th colspan="3">Riffles</th>
+                <th colspan="2">Shotguns</th>
+
+            </tr>
+            <tr>
+                <th>Weapon</th>
+                <th>Assault riffle</th>
+                <th>Heavy riffle</th>
+                <th>Tactical riffle</th>
+                <th>Tactical shotgun</th>
+            </tr>
+ 
+            <tr>
+                <th>DPS</th>
+                <th>165</th>
+                <th>140</th>
+                <th>154</th>
+                <th>108</th>
+            </tr>
+            <tr>
+                <td id="wybor">Icon</th>
+                <td style="background-color: orange;"><img id="assault" src="assault.png"></td>
+                <td style="background-color: darkblue;"><img id="heavy" src="heavy.png"></td>
+                <td style="background-color: green;"><img id="tactical" src="tactical.png"></td>
+                <td style="background-color: blue;"><img id="assault" src="tacticalshot.png"></td>
+            </tr>
+       </table>
+    </main>
+</body>
+</html>

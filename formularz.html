@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" type="image/png" href="fortniteF.png">
+      <style>
+        @font-face {
+            font-family: czcionka;
+            src: url(fortniteFont.otf);
+            }   
+        body{
+            background-color: black;
+            margin:0 auto;
+            font-family: czcionka;
+            height: 100%;
+            min-height: 100%;
+        }
+        main, footer{
+            justify-content: center;
+            text-align: center;
+            background-color: black;
+        }
+        header{
+            border:3px solid white;
+            font-size:xx-large;
+            position:fixed; 
+            left: 50%;
+            transform: translateX(-50%);
+            width:99%;
+            margin-top: 10px;
+            top:0;
+            background-image: url("fortnitetlo.jpg");
+            z-index: 100;
+            display: inline;
+            justify-content: space-evenly;
+        }
+        header ul {
+            list-style-type: none;
+            padding: 0;
+            overflow:hidden;
+            width:auto;
+            border-top:1px groove navy;
+            border-bottom:1px groove navy;
+            justify-content: center;
+            
+        }
+        li {
+            float:left;
+            width: 25%;
+        }
+        header li a {
+            text-decoration: none;
+            text-align: center;
+            line-height: 120px;
+            display:block;
+            height:120px;
+            color: white;
+        }
+        header li a:hover {
+            background-color: white;
+            color:navy;
+            opacity: 0.5;
+        }
+        main{
+            position:relative;
+            background-color: black;
+            color: white;
+            font-size: xx-large;
+            top:220px;
+            width:100%;
+            height: 830px;
+            margin-bottom:50px;
+        }
+        #obraz{
+            float: left;
+        }
+li img{
+    width:100%;
+    height:100%;
+}
+#canv1:hover{
+    cursor: pointer;
+    opacity:0.8
+}
+/*
+
+*/
+footer {
+    position: relative;
+    background: -webkit-canvas(squares);
+    width:100%;
+    height:200px;
+    background-color: purple;
+    color: white;
+    align-items: flex-end;
+}
+footer h1{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    text-align:center;
+    margin-bottom:-2px;
+}
+form{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+input{
+    margin:15px;
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+<body>
+
+    <header>
+        <a href="index.html"><img width="350px" height="190px" id="obraz" src="logoFT.png"></a>
+        <ul>
+            <li><a href="index.html">Wstęp</a></li>
+            <li><a href="druga.html">Postacie</a></li>
+            <li><a href="bronie.html">Bronie</a></li>
+            <li><a href="formularz.html">Rejestracja</a></li>    
+          </ul>
+         
+    </header>
+    <div>
+    <main>
+    <form name="register" id="register" method="POST" onsubmit="return validateForm(this)">
+        <h3 id="title" style="background-color: purple ; width: 80% ;margin: 0 auto; margin-bottom:15px;    ">Rejestracja</h3>
+    <label for="imie">Imię</label><br>
+    <input type="text" id="imie" name="imie" required><br>
+    <label for="nazwisko">Nazwisko</label><br>
+    <input type="text" id="nazwisko" name="nazwisko" required><br>
+    <label for="email">Email</label><br>
+    <input type="text" id="email" name="email" required><br>
+    <label for="telefon">Telefon</label><br>
+    <input type="text" id="telefon" name="telefon" required><br>
+    <label for="check1">Czy chcesz otrzymywać informacje drogą mailową?</label> 
+    <input type="checkbox" id="check1" name="check1"><br>
+    <label for="check2" >Czy chcesz otrzymywać informacje za pomocą SMS?</label>
+    <input type="checkbox" id="check2" name="check2"><br>
+        <input type="submit" value="Zarejestruj mnie!" style="font-family: czcionka; width:200px;height:50px;font-size: x-large ;">
+    </form>
+
+
+    <script>
+        var cont= document.getElementById("canv1")
+        var zaw= cont.getContext("2d")
+        zaw.lineWidth="8"
+        zaw.moveTo(50,55)
+        zaw.lineTo(80,75)
+        zaw.stroke()
+        zaw.lineTo(150,35)
+        zaw.stroke()
+        zaw.lineTo(80,105)
+        zaw.stroke()
+        zaw.lineTo(50,55)
+        zaw.strokeStyle="purple"
+        zaw.stroke()
+        zaw.beginPath()
+        zaw.arc(100,75,55 ,0,2*Math.PI)
+        zaw.stroke()
+      cont.addEventListener('click',function(){
+        var news = document.getElementById("register")
+        news.dispatchEvent(new Event('submit'))
+        news.submit(function(e) {
+    e.preventDefault();
+});
+      })
+function validateForm(form){
+        if(!form.check1.checked && !form.check2.checked){
+                alert("Wybierz conajmniej jedną formę przekazywania informacji! ")
+                return false
+            }else{
+                alert("Dziękujemy za zapisanie")
+                return true
+            }
+}
+
+    </script>
+    </main>
+</div>
+<footer>
+    <canvas id="canv2" width="150" height="300" hidden></canvas>
+    <h1> Wykonał Mikołaj Skóra </h1>
+ <script>
+     var cont= document.getElementById("canv2")
+     var zaw= cont.getContext("2d")
+     zaw.lineWidth="8"
+     zaw.moveTo(50,20)
+     zaw.lineTo(100,20)
+     zaw.lineTo(100,50)
+     zaw.lineTo(75,50)
+     zaw.lineTo(75,75)
+     zaw.lineTo(90,75)
+     zaw.lineTo(90,100)
+     zaw.lineTo(75,100)
+     zaw.lineTo(75,135)
+     zaw.lineTo(50,135)
+     zaw.lineTo(50,16)
+     zaw.stroke()
+     zaw.fillStyle="white"
+     zaw.fill()
+     $('footer').css({'background-image':"url(" + cont.toDataURL("image/png")+ ")" });
+
+ </script>
+</footer>
+</body>
+</html>

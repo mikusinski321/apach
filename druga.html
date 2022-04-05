@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" type="image/png" href="fortniteF.png">
+      <style>
+        @font-face {
+            font-family: czcionka;
+            src: url(fortniteFont.otf);
+            }   
+            button{
+                font-family: czcionka;
+                font-size:xx-large;
+                width:200px; height:50px; color: white; background-color:purple
+            }
+        body{
+            background-color: black;
+            margin:0 auto;
+            font-family: czcionka;
+            height: 100%;
+            min-height: 100%;
+        }
+        main, footer{
+            justify-content: center;
+            text-align: center;
+            background-color: black;
+        }
+        header{
+            border:3px solid white;
+            font-size:xx-large;
+            position:fixed; 
+            left: 50%;
+            transform: translateX(-50%);
+            width:99%;
+            margin-top: 10px;
+            top:0;
+            background-image: url("fortnitetlo.jpg");
+            z-index: 100;
+            display: inline;
+            justify-content: space-evenly;
+        }
+        header ul {
+            list-style-type: none;
+            padding: 0;
+            overflow:hidden;
+            width:auto;
+            border-top:1px groove navy;
+            border-bottom:1px groove navy;
+            justify-content: center;
+            
+        }
+        li {
+            float:left;
+            width: 25%;
+        }
+        header li a {
+            text-decoration: none;
+            text-align: center;
+            line-height: 120px;
+            display:block;
+            height:120px;
+            color: white;
+        }
+        header li a:hover {
+            background-color: white;
+            color:navy;
+            opacity: 0.5;
+        }
+        main{
+            position:relative;
+            background-color: black;
+            color: white;
+            font-size: xx-large;
+            top:220px;
+            width:100%;
+            height: 830px;
+            margin-bottom:50px;
+        }
+        #obraz{
+            float: left;
+        }
+li img{
+    width:100%;
+    height:100%;
+}
+
+/*
+
+*/
+#portrait, #dancer{
+    width:400px;
+    height:400px;   
+    border: 10px solid purple;
+}   
+#dancer{
+    position:relative;
+    width:400px; 
+    height:400px;   
+}
+
+#wrap{
+    margin: 0 auto;
+    width:1000px;
+    height: 500px   ;
+    background-color: purple;
+}
+footer {
+    position: relative;
+    background: -webkit-canvas(squares);
+    width:100%;
+    height:200px;
+    background-color: purple;
+    color: white;
+    align-items: flex-end;
+}
+footer h1{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    text-align:center;
+    margin-bottom:-2px;
+}
+form{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+<body>
+
+    <header>
+        <a href="index.html"><img width="350px" height="190px" id="obraz" src="logoFT.png"></a>
+        <ul>
+            <li><a href="index.html">Wstęp</a></li>
+            <li><a href="druga.html">Postacie</a></li>
+            <li><a href="bronie.html">Bronie</a></li>
+            <li><a href="formularz.html">Rejestracja</a></li>  
+          </ul>
+         
+    </header>
+    <div>
+    <main>
+        <div id="wrap">
+        <h3 id="name">TheReaper</h3>
+<img id="portrait" src="TheReaper.webp">
+<img id="dancer" src="TheReaper.png""><br>
+<button id="previous">Poprzedni</button>
+<button id="next">Następny</button>
+<button id="skip" onclick="localStorage.setItem('skin',obrazki[i])"><a style="text-decoration:none;color:white" href="bronie.html">Dobierz broń!</a></button><br>
+</div>
+<script>
+    var obrazki = ["TheReaper","Leviathan", "SkullTrooper","Raven"]
+    var i = 0
+    $( "#next" ).click(function() {
+        if (i==obrazki.length-1) {i=0} else{ i+=1}
+        $("#portrait").attr("src", obrazki[i]     + ".webp")
+        $("#dancer").attr("src",  obrazki[i] + ".png")
+        $("#name").html(obrazki[i])
+    })
+    $( "#previous" ).click(function() {
+        if (i==0) {i=3} else{ i-=1}
+        $("#dancer").attr("src", obrazki[i]   + ".png   ")
+        $("#portrait").attr("src", obrazki[i]     + ".webp")
+        $("#name").html(obrazki[i])
+
+    })
+    $(function() {
+        $("#dancer").hover(
+            function() {
+                $(this).attr("src", obrazki[i]+".gif")
+            },
+            function() {
+                $(this).attr("src", obrazki[i]+".png")
+            }                         
+        );                  
+    });
+
+</script>
+    </main>
+</div>
+<footer>
+    <canvas id="canv2" width="190" height="300" hidden></canvas>
+    <h1> Wykonał Mikołaj Skóra </h1>
+ <script>
+     var cont= document.getElementById("canv2")
+     var zaw= cont.getContext("2d")
+     zaw.lineWidth="8"
+     zaw.moveTo(50,20)
+     zaw.lineTo(100,20)
+     zaw.lineTo(100,50)
+     zaw.lineTo(75,50)
+     zaw.lineTo(75,75)
+     zaw.lineTo(90,75)
+     zaw.lineTo(90,100)
+     zaw.lineTo(75,100)
+     zaw.lineTo(75,135)
+     zaw.lineTo(50,135)
+     zaw.lineTo(50,16)
+     zaw.stroke()
+     zaw.fillStyle="white"
+     zaw.fill()
+     $('footer').css({'background-image':"url(" + cont.toDataURL("image/png")+ ")" });
+
+ </script>
+</footer>
+</body>
+</html>
